@@ -1,0 +1,14 @@
+.noResize {
+    resize: none;
+    outline: none;
+    border: solid lightgray 0.5px;
+    padding: 0px;
+    height: 3vmin;
+    font-size: 2.5vmin;
+}
+
+.noResize:focus,
+.noResize:hover {
+    outline: none;
+    border: solid lightgray 0.5px;
+}
