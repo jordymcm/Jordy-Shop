@@ -1,14 +1,114 @@
+#mainMenuI {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 5vw;
+}
+
+
+#order {
+    width: 100%;
+    height: 100%;
+
+}
+
+#imgHolder {
+    height: 40vmin;
+    width: 40vmin;
+    background: #000000;
+}
+
+#orderQwantity {
+    height: 3vmin;
+    font-size: 2.5vmin;
+    width: 7vmin;
+}
+
+#backButton {
+    width: 20vmin;
+    height: 5vmin;
+    background: red;
+}
+
+.defoltOption {
+    background: none;
+}
+
+.defoltOption:hover {
+    background: none;
+}
+
+.ihA {
+    display: flex;
+    align-items: center;
+}
+
+.ihB {
+    display: flex;
+    justify-content: center;
+}
+
 .noResize {
     resize: none;
     outline: none;
     border: solid lightgray 0.5px;
     padding: 0px;
-    height: 3vmin;
-    font-size: 2.5vmin;
+
 }
 
 .noResize:focus,
 .noResize:hover {
     outline: none;
     border: solid lightgray 0.5px;
+}
+
+.item {
+    position: relative;
+    background: red;
+    border-radius: 2vmin;
+}
+
+.iTypeA {
+    width: 90vw;
+    height: 30vw;
+    /*left: 5vw;*/
+}
+
+.itemPartA {
+    position: relative;
+}
+
+.iTypePartA {
+    height: 30vw;
+    width: 30vw;
+}
+
+
+.hide {
+    display: none;
+}
+
+.imgTypeA {
+    width: 40vmin;
+}
+
+.imgTypeB {
+    height: 40vmin;
+}
+
+/*.imgOrderDisplay {*/
+
+/*    display: flex;*/
+
+/*    justify-content: center;*/
+
+/*}*/
+
+/*TODO: fix width and height*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 98vw;
+    height: 98vh;
 }
