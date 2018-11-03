@@ -16,7 +16,7 @@ var itemDetails = {
 
 
 window.onload = function() {
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 5; i++) {
         e = document.createElement("div");
         e.classList.add("item");
         e.classList.add("iTypeA");
@@ -32,6 +32,24 @@ window.onload = function() {
     document.getElementById("order").classList.add("hide");
 
 
+
+}
+
+function cartAdd() {
+    console.log(isNaN(document.getElementById("orderQwantity").value))
+    if (isNaN(document.getElementById("orderQwantity").value) === false && document.getElementById("orderQwantity").value !== "" && document.getElementById("orderQwantity").value !== "0") {
+        var orderData = itemId + document.getElementById("orderQwantity").value;
+        //+ document.getElementById("POorPI").value;
+        if (localStorage.getItem("cart") === null || localStorage.getItem("cart") === "null") {
+            localStorage.setItem("cart", orderData);
+        }
+        else {
+            localStorage.setItem("cart", localStorage.getItem("cart") + "-" + orderData);
+        }
+    }
+    else {
+        alert("You need to enter a qwantity");
+    }
 
 }
 

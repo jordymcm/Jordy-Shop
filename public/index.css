@@ -5,6 +5,18 @@
     left: 5vw;
 }
 
+#cartAddButton {
+    position: absolute;
+    background: #ff4c35;
+    width: 35vmin;
+    height: 5vmin;
+    border-radius: 0.5vmin;
+    bottom: 1vmin;
+    right: 1vmin;
+    text-align: center;
+    font-size: 4.5vmin;
+}
+
 
 #order {
     width: 100%;
@@ -25,9 +37,15 @@
 }
 
 #backButton {
+    position: absolute;
     width: 20vmin;
     height: 5vmin;
-    background: red;
+    background: #ff4c35;
+    border-radius: 0.5vmin;
+    top: 1vmin;
+    right: 1vmin;
+    text-align: center;
+    font-size: 4.5vmin;
 }
 
 .defoltOption {
@@ -72,6 +90,13 @@
     width: 90vw;
     height: 30vw;
     /*left: 5vw;*/
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
+}
+
+.defont {
+    font-family: arial;
+    color: #ffffff;
 }
 
 .itemPartA {
