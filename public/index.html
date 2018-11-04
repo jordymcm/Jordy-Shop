@@ -7,31 +7,45 @@
 </head>
 
 <body>
-  
+
   <div id="mainMenu">
+    <!--tempry-->
+    <div style="height:10px; width:30px; background:red;" onclick="openCart()"></div>
+    <!--end-->
     <div id="mainMenuI">
-      
+
     </div>
-    
+
   </div>
-  
-  
+
+
   <div id="order">
     <div id="imgHolder">
-      
+
     </div>
-    
-    <textarea maxlength="1" id="orderQwantity" class="noResize"></textarea>
-    
-    
+    <div id="itemInfoText" class="defont"></div>
+
+    <textarea placeholder="Quantity" maxlength="1" id="orderQwantity" class="noResize"></textarea>
+
+    <select id="changeItemType" class="noResize defoltOption defont">
+      
+    </select>
+
+
     <!--<select id="POorPI" class="noResize defoltOption">-->
     <!--  <option class="defoltOption" value=1>Pickup</option>-->
     <!--  <option class="defoltOption" value=2>Post</option>-->
     <!--</select>-->
-    
+
     <div class="defont" onclick="backToMainMenu()" id="backButton">Back</div>
-    
-    <div onclick="cartAdd()" class="defont"id="cartAddButton">Add to cart</div>
+
+    <div onclick="cartAdd()" class="defont" id="cartAddButton"> + Add to cart</div>
+  </div>
+
+  <div id="cart">
+    <div id="cartI">
+      
+    </div>
   </div>
 </body>
 
