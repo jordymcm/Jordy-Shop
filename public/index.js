@@ -110,10 +110,10 @@ window.onload = function() {
         }
 
         e.setAttribute("data-openitem", itemOrder["i" + iNumber])
-        ea = document.createElement("div");
-        ea.classList.add("itemPartA");
-        ea.classList.add("iTypePartA");
-        e.appendChild(ea);
+        // ea = document.createElement("div");
+        // ea.classList.add("itemPartA");
+        // ea.classList.add("iTypePartA");
+        // e.appendChild(ea);
         document.getElementById("mainMenuI").appendChild(e);
     }
 
@@ -263,14 +263,22 @@ function addItemsToCartMenu() {
         ea.classList.add("qwantityCart", "defont");
         e.appendChild(ea);
 
+
+
+
+
+
         ea = document.createElement("img");
         ea.src = itemDetails.items[itemsInCart[i].substring(0, 4)].img1;
         ea.classList.add("imgCart");
+        
+        
+        
         if (itemDetails.items[itemsInCart[i].substring(0, 4)].itB === "ihA") {
-            ea.style.width = "10vmin"
+            ea.style.width = "10vw"
         }
         else {
-            ea.style.height = "10vmin"
+            ea.style.height = "10vw"
         }
         e.appendChild(ea);
 
