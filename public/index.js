@@ -10,6 +10,7 @@ var itemDetails = {
             itA: "imgTypeA",
             itB: "ihA",
             price: 2.99,
+            name: "Travelling Pencil Case",
             itemTypes: {
                 "1o": {
                     value: "000",
@@ -26,10 +27,7 @@ var itemDetails = {
                     text: "cats"
                 },
 
-                "4o": {
-                    value: "003",
-                    text: "dogs"
-                },
+
             },
             info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
 
@@ -41,6 +39,7 @@ var itemDetails = {
             itA: "imgTypeB",
             itB: "ihB",
             price: 2.99,
+            name: "Cat",
             itemTypes: {
                 "1o": {
                     value: "000",
@@ -50,17 +49,8 @@ var itemDetails = {
                 "2o": {
                     value: "001",
                     text: "othor"
-                },
+                }
 
-                "3o": {
-                    value: "002",
-                    text: "cats"
-                },
-
-                "4o": {
-                    value: "003",
-                    text: "dogs"
-                },
             },
             info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
 
@@ -72,6 +62,7 @@ var itemDetails = {
             itA: "imgTypeA",
             itB: "ihA",
             price: 2.99,
+            name: "Test",
             itemTypes: {
                 "1o": {
                     value: "000",
@@ -117,7 +108,7 @@ window.onload = function() {
         e.onclick = function(event) {
             itemClicked(event);
         }
-        
+
         e.setAttribute("data-openitem", itemOrder["i" + iNumber])
         ea = document.createElement("div");
         ea.classList.add("itemPartA");
@@ -144,9 +135,9 @@ function cartAdd() {
         else {
             localStorage.setItem("cart", localStorage.getItem("cart") + "-" + orderData);
         }
-        
+
         alert("Sucsesfully added item to cart");
-        
+
         hideAllPages();
         openMainMenu();
     }
@@ -178,7 +169,9 @@ function openMainMenu() {
 
 function openOrderMenu(event) {
     itemId = event.srcElement.dataset.openitem;
-    console.log(itemId)
+    console.log(itemId);
+    document.getElementById("orderQwantity").value = "";
+    document.getElementById("changeItemType").value = "1o";
     document.getElementById("imgHolder").removeChild(document.getElementById("imgHolder").firstChild);
     document.getElementById("changeItemType").innerHTML = "";
     document.getElementById("itemInfoText").innerHTML = itemDetails.items[itemId].info;
@@ -250,10 +243,40 @@ function openCart() {
 }
 
 function addItemsToCartMenu() {
-    for(var i = 0; i < 4; i++) {
+
+    document.getElementById("cartI").innerHTML = "";
+
+    var itemsInCart = localStorage.getItem("cart").split("-");
+    for (var i = 0; i < itemsInCart.length; i++) {
         e = document.createElement("div");
         e.classList.add("cartItem");
         
+        //check adding moltaball    classes 
+
+        ea = document.createElement("div");
+        ea.innerHTML = itemDetails.items[itemsInCart[i].substring(0, 4)].name;
+        ea.classList.add("nameCart", "defont");
+        e.appendChild(ea);
+
+        ea = document.createElement("div");
+        ea.innerHTML = "Quantity: " + itemsInCart[i].substring(4, 5);
+        ea.classList.add("qwantityCart", "defont");
+        e.appendChild(ea);
+
+        ea = document.createElement("img");
+        ea.src = itemDetails.items[itemsInCart[i].substring(0, 4)].img1;
+        ea.classList.add("imgCart");
+        if (itemDetails.items[itemsInCart[i].substring(0, 4)].itB === "ihA") {
+            ea.style.width = "10vmin"
+        }
+        else {
+            ea.style.height = "10vmin"
+        }
+        e.appendChild(ea);
+
         document.getElementById("cartI").appendChild(e);
+
+
+
     }
 }

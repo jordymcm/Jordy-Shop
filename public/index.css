@@ -5,6 +5,12 @@
     /*left: 5vw;*/
 }
 
+#topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 #cartAddButton {
     position: absolute;
     background: #ff4c35;
@@ -31,8 +37,11 @@
 }
 
 /*#cartI {*/
+
 /*    display: flex;*/
+
 /*    flex-direction: column;*/
+
 /*}*/
 
 #imgHolder {
@@ -192,9 +201,35 @@
 
 .cartItem {
     position: relative;
+    display: inline-block;
     width: 43vw;
     height: 20vw;
-    /*margin-right: 0px;*/
+    background: red;
+    margin-left: 2vmin;
+    margin-top: 2vmin;
+}
+
+.qwantityCart {
+    position: absolute;
+    right: 1vmin;
+    top: 1vmin;
+    font-size: 3vmin;
+    color: #000000;
+}
+
+.nameCart {
+    position: absolute;
+    left: 1vmin;
+    top: 1vmin;
+    font-size: 3vmin;
+    color: #000000;
+    
+}
+
+.imgCart {
+    position: absolute;
+    left: 1vmin;
+    top: 5vmin;
 }
 
 /*.imgOrderDisplay {*/
