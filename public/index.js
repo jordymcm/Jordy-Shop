@@ -1,5 +1,6 @@
 var e;
 var ea;
+var eb;
 var itemId;
 
 var itemDetails = {
@@ -105,15 +106,31 @@ window.onload = function() {
         // e.classList.add("iTypeA");
         var iNumber = i + 1;
         // console.log(itemOrder["i" + iNumber])
-        e.onclick = function(event) {
+
+
+        ea = document.createElement("div");
+        ea.classList.add("itemPartA");
+        e.appendChild(ea);
+
+        ea = document.createElement("div");
+        ea.classList.add("itemPartB");
+        // console.log(itemDetails.items[itemOrder["i" + iNumber]].img1)
+        eb = document.createElement("img");
+        eb.src = itemDetails.items[itemOrder["i" + iNumber]].img1;
+        eb.classList.add("itemImg")
+        ea.appendChild(eb);
+
+
+        e.appendChild(ea);
+
+        ea = document.createElement("div");
+        ea.classList.add("itemClickP");
+        ea.setAttribute("data-openitem", itemOrder["i" + iNumber])
+        ea.onclick = function(event) {
             itemClicked(event);
         }
+        e.appendChild(ea);
 
-        e.setAttribute("data-openitem", itemOrder["i" + iNumber])
-        // ea = document.createElement("div");
-        // ea.classList.add("itemPartA");
-        // ea.classList.add("iTypePartA");
-        // e.appendChild(ea);
         document.getElementById("mainMenuI").appendChild(e);
     }
 
@@ -243,48 +260,76 @@ function openCart() {
 }
 
 function addItemsToCartMenu() {
-
+    
     document.getElementById("cartI").innerHTML = "";
 
-    var itemsInCart = localStorage.getItem("cart").split("-");
-    for (var i = 0; i < itemsInCart.length; i++) {
-        e = document.createElement("div");
-        e.classList.add("cartItem");
-        
-        //check adding moltaball    classes 
-
-        ea = document.createElement("div");
-        ea.innerHTML = itemDetails.items[itemsInCart[i].substring(0, 4)].name;
-        ea.classList.add("nameCart", "defont");
-        e.appendChild(ea);
-
-        ea = document.createElement("div");
-        ea.innerHTML = "Quantity: " + itemsInCart[i].substring(4, 5);
-        ea.classList.add("qwantityCart", "defont");
-        e.appendChild(ea);
+    if (localStorage.getItem("cart") !== null && localStorage.getItem("cart") !== "null") {
 
 
+        var itemsInCart = localStorage.getItem("cart").split("-");
+        for (var i = 0; i < itemsInCart.length; i++) {
+            e = document.createElement("div");
+            e.classList.add("cartItem");
+
+            //check adding moltaball    classes 
+
+            ea = document.createElement("div");
+            ea.innerHTML = itemDetails.items[itemsInCart[i].substring(0, 4)].name;
+            ea.classList.add("nameCart", "defont");
+            e.appendChild(ea);
+
+            ea = document.createElement("div");
+            ea.innerHTML = "Quantity: " + itemsInCart[i].substring(4, 5);
+            ea.classList.add("qwantityCart", "defont");
+            e.appendChild(ea);
+
+            ea = document.createElement("div");
+            ea.innerHTML = "Remove";
+            ea.classList.add("removeFromCartButton", "defont");
+            ea.setAttribute("data-removeitem", itemsInCart[i]);
+            ea.onclick = function(event) {
+                removeFromCart(event);
+            }
+            e.appendChild(ea);
 
 
 
 
-        ea = document.createElement("img");
-        ea.src = itemDetails.items[itemsInCart[i].substring(0, 4)].img1;
-        ea.classList.add("imgCart");
-        
-        
-        
-        if (itemDetails.items[itemsInCart[i].substring(0, 4)].itB === "ihA") {
-            ea.style.width = "10vw"
+
+
+            ea = document.createElement("img");
+            ea.src = itemDetails.items[itemsInCart[i].substring(0, 4)].img1;
+            ea.classList.add("imgCart");
+
+
+
+            if (itemDetails.items[itemsInCart[i].substring(0, 4)].itB === "ihA") {
+                ea.style.width = "10vw"
+            }
+            else {
+                ea.style.height = "10vw"
+            }
+            e.appendChild(ea);
+
+            document.getElementById("cartI").appendChild(e);
+
+
+
         }
-        else {
-            ea.style.height = "10vw"
-        }
-        e.appendChild(ea);
-
-        document.getElementById("cartI").appendChild(e);
-
-
 
     }
+}
+
+function removeFromCart(event) {
+
+
+    var a = localStorage.getItem("cart").split("-");
+    var b = a.filter((i) => !(i === event.srcElement.dataset.removeitem))
+    var c = b.join("-");
+    localStorage.setItem("cart", c);
+    if (localStorage.getItem("cart").length < 8) {
+        localStorage.setItem("cart", null)
+    }
+    addItemsToCartMenu();
+
 }
