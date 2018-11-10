@@ -1,3 +1,12 @@
+#stop {
+    position: fixed;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
 #mainMenuI {
     position: absolute;
     display: flex;
@@ -77,10 +86,209 @@
     border-radius: 0.5vmin;
 }
 
+
 #orderQwantity::placeholder {
     font-size: 2vmin;
     color: lightgray;
     font-family: arial;
+}
+
+#orderDName {
+    position: relative;
+    margin: auto;
+    width: 56vmin;
+    /*margin-right: 1vmin;*/
+    height: 4vmin;
+    font-size: 2.8vmin;
+    border: solid lightgray 0.5px;
+    padding: 0px;
+    /*margin: 0px;*/
+    box-sizing: border-box;
+    border-radius: 0.5vmin;
+    margin-top: 2vmin;
+}
+
+
+
+#orderDName::placeholder {
+    font-size: 2.8vmin;
+    color: lightgray;
+    font-family: arial;
+}
+
+#orderDEmail {
+    position: relative;
+    margin: auto;
+    width: 56vmin;
+    /*margin-right: 1vmin;*/
+    height: 8vmin;
+    font-size: 3vmin;
+    border: solid lightgray 0.5px;
+    padding: 0px;
+    /*margin: 0px;*/
+    box-sizing: border-box;
+    border-radius: 0.5vmin;
+    margin-top: 1vmin;
+}
+
+#orderDEmail::placeholder {
+    font-size: 3vmin;
+    color: lightgray;
+    font-family: arial;
+}
+
+
+#orderDEmail::-webkit-scrollbar {
+    width: 0.5vmin;
+}
+
+/* Track */
+
+#orderDEmail::-webkit-scrollbar-track {
+    background: #d1d1d1;
+    border-top-left-radius: 0.5vmin;
+    border-bottom-left-radius: 0.5vmin;
+}
+
+/* Handle */
+
+#orderDEmail::-webkit-scrollbar-thumb {
+    background: #adadad;
+    width: 2vmin;
+    border-top-left-radius: 0.5vmin;
+    border-bottom-left-radius: 0.5vmin;
+}
+
+/* Handle on hover */
+
+#orderDEmail::-webkit-scrollbar-thumb:hover {
+    background: #9e9e9e;
+}
+
+#orderDPostCode {
+    position: relative;
+    margin: auto;
+    width: 56vmin;
+    /*margin-right: 1vmin;*/
+    height: 4vmin;
+    font-size: 3vmin;
+    border: solid lightgray 0.5px;
+    padding: 0px;
+    /*margin: 0px;*/
+    box-sizing: border-box;
+    border-radius: 0.5vmin;
+    margin-top: 1vmin;
+}
+
+#orderDPostCode::placeholder {
+    font-size: 3vmin;
+    color: lightgray;
+    font-family: arial;
+}
+
+#orderDALA {
+    position: relative;
+    /*margin: auto;*/
+    width: 27vmin;
+    height: 8vmin;
+    margin-right: 1vmin;
+    margin-top: 1vmin;
+    font-size: 3vmin;
+    border: solid lightgray 0.5px;
+    padding: 0px;
+    /*margin: 0px;*/
+    box-sizing: border-box;
+    border-radius: 0.5vmin;
+}
+
+#orderDALA::placeholder {
+    font-size: 3vmin;
+    color: lightgray;
+    font-family: arial;
+}
+
+#OrderDSelectState {
+    position: relative;
+    /*margin: auto;*/
+    width: 27vmin;
+    height: 8vmin;
+    font-size: 2.5vmin;
+    border: solid lightgray 0.5px;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border-radius: 0.5vmin;
+
+}
+
+
+
+#POorPI {
+    margin: 2vmin;
+    position: relative;
+    width: 40vmin;
+    height: 5vmin;
+    font-size: 4vmin;
+    box-sizing: border-box;
+    border: solid lightgray 0.5px;
+    border-radius: 0.5vmin;
+}
+
+#orderDeatails {
+    position: fixed;
+    width: 60vmin;
+    height: 70vmin;
+    background: #3d3d3d;
+    /*box-shadow: 5px 5px 5px #999999;*/
+    z-index: 999999;
+    left: calc(50% - 30vmin);
+    top: 10vmin;
+    border-radius: 2vmin;
+
+}
+
+#orderDeatailsI {
+    width: 60vmin;
+    height: 30vmin;
+    display: flex;
+    flex-direction: column;
+}
+
+#orderDOrderButton {
+    position: relative;
+    margin-right: 1vmin;
+    width: 27vmin;
+    height: 5vmin;
+    background: #ff4c35;
+    border-radius: 0.5vmin;
+    text-align: center;
+    font-size: 4.5vmin;
+    color: #ffffff;
+}
+
+#orderDCancilButton {
+    position: relative;
+    margin-left: 1vmin;
+    width: 27vmin;
+    height: 5vmin;
+    background: #bababa;
+    border-radius: 0.5vmin;
+    right: 0px;
+    text-align: center;
+    font-size: 4.5vmin;
+    color: #ffffff;
+}
+
+#orderCorO {
+    position: absolute;
+    display: flex;
+    left: 2vmin;
+    bottom: 2vmin;
+}
+
+#orderDR {
+    display: flex;
+    margin: auto;
 }
 
 #changeItemType {
@@ -116,6 +324,8 @@
     color: #000000;
 
 }
+
+
 
 .removeFromCartButton {
     position: absolute;
@@ -291,8 +501,8 @@
 body {
     padding: 0px;
     margin: 0px;
-    width: 98vw;
-    height: 98vh;
+    /*width: 98vw;*/
+    /*height: 98vh;*/
 }
 
 body::-webkit-scrollbar {

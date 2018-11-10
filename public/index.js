@@ -136,6 +136,7 @@ window.onload = function() {
 
 
     document.getElementById("order").classList.add("hide");
+    document.getElementById("cart").classList.add("hide");
 
 
 
@@ -255,12 +256,14 @@ function menuItem(selection) {
 
 function openCart() {
     hideAllPages();
+    document.getElementById("orderButton").classList.remove("hide");
+    document.getElementById("orderDeatails").classList.add("hide");
     document.getElementById("cart").classList.remove("hide")
     addItemsToCartMenu();
 }
 
 function addItemsToCartMenu() {
-    
+
     document.getElementById("cartI").innerHTML = "";
 
     if (localStorage.getItem("cart") !== null && localStorage.getItem("cart") !== "null") {
@@ -332,4 +335,41 @@ function removeFromCart(event) {
     }
     addItemsToCartMenu();
 
+}
+
+function orderButtonClicked() {
+    document.getElementById("stop").classList.remove("hide");
+    document.getElementById("orderButton").classList.add("hide");
+    document.getElementById("orderDeatails").classList.remove("hide");
+    
+    document.getElementById("orderDName").value = ("");
+    document.getElementById("orderDEmail").value = ("");
+    document.getElementById("orderDALA").value = ("");
+    document.getElementById("orderDName").value = ("");
+    document.getElementById("orderDPostCode").value = ("");
+    document.getElementById("OrderDSelectState").value = ("NSW");
+    
+    
+    // hideOrShowDetails();
+}
+
+function closeOrderDetails() {
+    document.getElementById("stop").classList.add("hide");
+    document.getElementById("orderButton").classList.remove("hide");
+    document.getElementById("orderDeatails").classList.add("hide");
+}
+
+function finishOrderButtonClicked() {
+    closeOrderDetails()
+}
+
+function hideOrShowDetails() {
+    if (document.getElementById("POorPI").value === "1") {
+        document.getElementById("orderDeatailsA").classList.remove("hide");
+        document.getElementById("orderDeatailsB").classList.add("hide");
+    }
+    else {
+        document.getElementById("orderDeatailsA").classList.add("hide");
+        document.getElementById("orderDeatailsB").classList.remove("hide");
+    }
 }

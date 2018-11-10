@@ -7,6 +7,8 @@
 </head>
 
 <body>
+  
+  <div id="stop" class="hide"></div>
 
   <div id="mainMenu">
     <!--tempry-->
@@ -43,8 +45,46 @@
   </div>
 
   <div id="cart">
+    <div id="orderButton" onclick="orderButtonClicked()">Order</div>
+    <div id="orderDeatails">
+      <div id="orderDeatailsI">
+        <textarea placeholder="Name" maxlength="33" id="orderDName" class="noResize"></textarea>
+        <!--<select id="POorPI" class="noResize defoltOption" onchange="hideOrShowDetails()">-->
+        <!--      <option class="defoltOption" value="1">Pickup</option>-->
+        <!--      <option class="defoltOption" value="2">Post</option>-->
+        <!--</select>-->
+        <!--<div id="orderDeatailsA">-->
+
+        <!--</div>-->
+        <!--<div id="orderDeatailsB">-->
+
+        <!--</div>-->
+
+        <textarea placeholder="Email" maxlength="254" id="orderDEmail" class="noResize"></textarea>
+        <textarea placeholder="Post Code" maxlength="33" id="orderDPostCode" class="noResize"></textarea>
+        <div id="orderDR">
+          <textarea placeholder="Addres Line / PO Box" maxlength="32" id="orderDALA" class="noResize"></textarea>
+          <div style="margin-left: 1vmin; margin-top: 1vmin;">
+            <select id="OrderDSelectState" class="noResize">
+              <option value="NSW">New South Wales</option>
+              <option value="WA">Western Australia</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="VIC">Victoria</option>
+              <option value="TAS">Tasmania</option>
+            </select>
+          </div>
+        </div>
+
+
+      </div>
+      <div id="orderCorO">
+        <div class="defont" id="orderDOrderButton" onclick="finishOrderButtonClicked()">Order</div>
+        <div class="defont" id="orderDCancilButton" onclick="closeOrderDetails()">Cancil</div>
+      </div>
+    </div>
     <div id="cartI">
-      
+
     </div>
   </div>
 </body>
