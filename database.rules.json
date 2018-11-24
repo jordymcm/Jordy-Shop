@@ -1,6 +1,12 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    "orders": {
+      ".read": "auth.uid === '88PXrSjQWBYzs2AU4tSsTjZTMqQ2'",
+      ".write": "auth.uid === '88PXrSjQWBYzs2AU4tSsTjZTMqQ2'"
+    },
+    "userOrders": {
+      ".read": "true",
+      ".write": "true"
+    }
   }
 }

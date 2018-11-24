@@ -1,7 +1,22 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDb1nRDnf0SkQAm-AF_lI9hov8FHbsf5m4",
+    authDomain: "jordy-shop.firebaseapp.com",
+    databaseURL: "https://jordy-shop.firebaseio.com",
+    projectId: "jordy-shop",
+    storageBucket: "jordy-shop.appspot.com",
+    messagingSenderId: "275722148119"
+};
+firebase.initializeApp(config);
+const database = firebase.database();
+
+
+
 var e;
 var ea;
 var eb;
 var itemId;
+var orderDisplay = 1;
 
 var itemDetails = {
     items: {
@@ -199,16 +214,14 @@ function openOrderMenu(event) {
 
     e = document.createElement("img");
     e.src = itemDetails.items[itemId].img1;
-    // depends on height and width
+
     e.classList.add(itemDetails.items[itemId].itA, "orderImg");
     ea = document.getElementById("imgHolder");
-    //  do all times
+
     ea.classList.remove("ihA", "ihB");
-    //  end
+
     console.log(itemDetails.items[itemId].itB);
     ea.classList.add(itemDetails.items[itemId].itB);
-
-    // end   
 
 
 
@@ -341,15 +354,23 @@ function orderButtonClicked() {
     document.getElementById("stop").classList.remove("hide");
     document.getElementById("orderButton").classList.add("hide");
     document.getElementById("orderDeatails").classList.remove("hide");
-    
+
+    document.getElementById("ODIA").classList.add("hide");
+    document.getElementById("ODIB").classList.add("hide");
+    document.getElementById("ODIC").classList.add("hide");
+     document.getElementById("ODID").classList.add("hide");
+
+    document.getElementById("ODIB").classList.remove("hide");
+    orderDisplay = 1;
+
     document.getElementById("orderDName").value = ("");
     document.getElementById("orderDEmail").value = ("");
     document.getElementById("orderDALA").value = ("");
     document.getElementById("orderDName").value = ("");
     document.getElementById("orderDPostCode").value = ("");
     document.getElementById("OrderDSelectState").value = ("NSW");
-    
-    
+
+
     // hideOrShowDetails();
 }
 
@@ -360,7 +381,34 @@ function closeOrderDetails() {
 }
 
 function finishOrderButtonClicked() {
-    closeOrderDetails()
+    document.getElementById("ODIA").classList.add("hide");
+    document.getElementById("ODIB").classList.add("hide");
+    document.getElementById("ODIC").classList.add("hide");
+    document.getElementById("ODID").classList.add("hide");
+    
+    if (orderDisplay === 1) {
+        document.getElementById("ODIA").classList.remove("hide");
+    }
+    
+    if (orderDisplay === 2) {
+        document.getElementById("ODIC").classList.remove("hide");
+    }
+    if (orderDisplay === 3) {
+        document.getElementById("ODID").classList.remove("hide");
+    }
+    
+    if (orderDisplay === 4) {
+        addOrderToDatabase();
+        closeOrderDetails();
+    }
+    
+    orderDisplay++;
+    
+}
+
+function emptyCart() {
+    localStorage.setItem("cart", null);
+    addItemsToCartMenu();
 }
 
 function hideOrShowDetails() {
@@ -372,4 +420,37 @@ function hideOrShowDetails() {
         document.getElementById("orderDeatailsA").classList.add("hide");
         document.getElementById("orderDeatailsB").classList.remove("hide");
     }
+}
+
+function addOrderToDatabase() {
+    var listOfItems = localStorage.getItem("cart").split("-");
+    var mapOfItems = {};
+    console.log(listOfItems)
+
+    listOfItems.forEach(function(item, i) {
+        mapOfItems[i.toString()] = item;
+    });
+    console.log(mapOfItems);
+    database.ref("userOrders").set(null);
+    database.ref("userOrders").set({
+        "orderData": {
+            "data": {
+                "items": mapOfItems,
+                "completed": false,
+                "sent": false
+            }
+        }
+    });
+
+    setTimeout(function() {
+        database.ref("userOrders").set(null);
+    }, 3000);
+    
+    emptyCart();
+
+
+    // console.log(database.ref("lastOrderId").val())
+
+
+
 }

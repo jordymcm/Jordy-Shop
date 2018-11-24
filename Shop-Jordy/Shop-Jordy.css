@@ -1,0 +1,9 @@
+#submitPassword {
+    height: 4vmin;
+    width: 10vmin;
+    background: red;
+}
+
+.hide {
+    display: none;
+}

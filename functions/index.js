@@ -39,7 +39,7 @@ admin.initializeApp(functions.config().firebase);
 //         // return snapshot.ref.parent.child('uppercase').set(uppercase);
 //         return functions.database.ref("testa/" + context.params.key).set(changedField.val());
 //     });
-    
+
 // exports.copyTEst = functions.database.ref("test/{key}")
 //     .onCreate((changedField, context) => {
 //         // Grab the current value of what was written to the Realtime Database.
@@ -53,10 +53,15 @@ admin.initializeApp(functions.config().firebase);
 //         return admin.database().ref("testa/" + context.params.key).set(changedField.val());
 //         // .database().ref("/users/"+id+"/info/status").set("ok")
 //     });
-    
+
 exports.copyOrder = functions.database.ref("userOrders/{key}")
     .onCreate((changedField, context) => {
-        return admin.database().ref("orders/" + context.params.key).set(changedField.val());
+        
+        var d = new Date();
+        
+        var td = d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString() + d.getHours().toString() + d.getMinutes().toString() + d.getSeconds().toString() + d.getMilliseconds().toString();
+        
+        return admin.database().ref("orders/" + td).set(changedField.val());
     });
-    
-    
+
+

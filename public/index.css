@@ -9,15 +9,53 @@
 
 #mainMenuI {
     position: absolute;
+    top: 6vmin;
     display: flex;
     flex-direction: column;
     /*left: 5vw;*/
 }
 
 #topbar {
+    display: flex;
     position: fixed;
-    top: 0;
-    width: 100%;
+    z-index: 99995;
+    width: 90%;
+    height: 5vmin;
+    background: #5b9aff;
+    border-bottom-right-radius: 3vmin;
+}
+
+#TBMainMenu {
+    position: relative;
+    margin-left: 1vmin;
+    margin-top: 0.5vmin;
+    color: #ffffff;
+    padding-top: 0.5vmin;
+    font-size: 3vmin;
+    height: 3.5vmin;
+    width: 15vmin;
+    border-radius: 0.5vmin;
+}
+
+
+#TBMainMenu:hover {
+    background: #448cff;
+}
+
+#TBOpenCartButton {
+    position: relative;
+    margin-left: 4vmin;
+    margin-top: 0.5vmin;
+    color: #ffffff;
+    padding-top: 0.5vmin;
+    font-size: 3vmin;
+    height: 3.5vmin;
+    width: 6vmin;
+    border-radius: 0.5vmin;
+}
+
+#TBOpenCartButton:hover {
+    background: #448cff;
 }
 
 #cartAddButton {
@@ -50,6 +88,7 @@
 
 #cartI {
     position: absolute;
+    top: 6vmin;
     left: 6vw;
 }
 
@@ -63,7 +102,7 @@
 
 #imgHolder {
     position: absolute;
-    top: 1vmin;
+    top: 8vmin;
     left: 1vmin;
     height: 40vmin;
     width: 40vmin;
@@ -234,6 +273,11 @@
     border-radius: 0.5vmin;
 }
 
+#orderButton {
+    position: absolute;
+    top: 6vmin;
+}
+
 #orderDeatails {
     position: fixed;
     width: 60vmin;
@@ -250,6 +294,50 @@
 #orderDeatailsI {
     width: 60vmin;
     height: 30vmin;
+    display: flex;
+    flex-direction: column;
+}
+
+#orderDeatailsIA {
+    width: 60vmin;
+    height: 55vmin;
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+#orderDeatailsIA::-webkit-scrollbar {
+    width: 2vmin;
+}
+
+/* Track */
+
+#orderDeatailsIA::-webkit-scrollbar-track {
+    background: #d1d1d1;
+    border-top-left-radius: 2vmin;
+    border-bottom-left-radius: 2vmin;
+}
+
+/* Handle */
+
+#orderDeatailsIA::-webkit-scrollbar-thumb {
+    background: #adadad;
+    width: 2vmin;
+    border-top-left-radius: 2vmin;
+    border-bottom-left-radius: 2vmin;
+}
+
+/* Handle on hover */
+
+#orderDeatailsIA::-webkit-scrollbar-thumb:hover {
+    background: #9e9e9e;
+}
+
+#orderDeatailsIB {
+    width: 60vmin;
+    height: 60vmin;
+    margin-top: 5vmin;
     display: flex;
     flex-direction: column;
 }
@@ -308,7 +396,7 @@
     height: 5vmin;
     background: #ff4c35;
     border-radius: 0.5vmin;
-    top: 1vmin;
+    top: 8vmin;
     right: 1vmin;
     text-align: center;
     font-size: 4.5vmin;
@@ -317,7 +405,7 @@
 
 #itemInfoText {
     position: absolute;
-    top: 42vmin;
+    top: 49vmin;
     left: 1vmin;
     width: 50vmin;
     font-size: 2.5vmin;
@@ -335,6 +423,7 @@
     width: 20vw;
     height: 3vmin;
     font-size: 3vmin;
+    border-radius: 0.5vmin;
     color: #ffffff;
 }
 
