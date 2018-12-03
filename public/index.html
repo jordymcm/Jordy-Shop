@@ -7,7 +7,7 @@
   <script type="text/javascript" src="index.js"></script>
 </head>
 
-<body>
+<body class="noneSelecting">
   
   <div id="topbar">
     <div class="defont" id="TBMainMenu" onclick="backToMainMenu()">Main Menu</div>
@@ -28,6 +28,9 @@
 
 
   <div id="order">
+    
+    <div class="defont" id="namePOItem"></div>
+    
     <div id="imgHolder">
 
     </div>
@@ -35,9 +38,9 @@
 
     <textarea placeholder="Quantity" maxlength="1" id="orderQwantity" class="noResize"></textarea>
 
-    <select id="changeItemType" class="noResize defoltOption defont">
-      
-    </select>
+    <select id="changeItemType" class="noResize defoltOption defont"></select>
+    
+    <div class="defont" id="orderPriceTotle"></div>
 
 
     <!--<select id="POorPI" class="noResize defoltOption">-->
@@ -51,7 +54,7 @@
   </div>
 
   <div id="cart">
-    <div id="orderButton" onclick="orderButtonClicked()">Order</div>
+    <div id="orderButton" class="defont" onclick="orderButtonClicked()">Order</div>
     <div id="orderDeatails">
       <div id="ODIA">
         <div id="orderDeatailsI">
@@ -90,22 +93,13 @@
       <div id="ODIB">
         <div id="orderDeatailsIA">
 
-
-          <h5 class="defont">1. test ----- $3.67</h5>
-          <h5 class="defont">2. dog ------ $4.83</h5>
-          <h5 class="defont">3. cat ------ $2.99</h5>
-          <h4 class="defont">4. post ----- $4.00</h4>
-          <h5 class="defont">1. test ----- $3.67</h5>
-          <h5 class="defont">2. dog ------ $4.83</h5>
-          <h5 class="defont">3. cat ------ $2.99</h5>
-          <h4 class="defont">4. post ----- $4.00</h4>
-
-          <h3 class="defont">totle: 15.40</h3>
+          <h3 class="defont" id="totlePriceInvoce">totle: 15.40</h3>
+          <!--<div id="orderDeatailsIAI"></div>-->
 
         </div>
       </div>
       <div id="orderCorO">
-        <div class="defont" id="orderDOrderButton" onclick="finishOrderButtonClicked()">Order</div>
+        <div class="defont" id="orderDOrderButton" onclick="finishOrderButtonClicked()"></div>
         <div class="defont" id="orderDCancilButton" onclick="closeOrderDetails()">Cancil</div>
       </div>
 
@@ -117,7 +111,7 @@
       </div>
       
       <div id="ODID">
-          <div id="orderDeatailsIC">
+          <div class="defont" id="orderDeatailsIC">
             finish
           </div>
         </div>

@@ -61,7 +61,10 @@ exports.copyOrder = functions.database.ref("userOrders/{key}")
         
         var td = d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString() + d.getHours().toString() + d.getMinutes().toString() + d.getSeconds().toString() + d.getMilliseconds().toString();
         
-        return admin.database().ref("orders/" + td).set(changedField.val());
+        var NCF = changedField.val();
+        NCF.data['totlePrice'] = "test";
+        
+        return admin.database().ref("orders/" + td).set(NCF);
     });
 
 

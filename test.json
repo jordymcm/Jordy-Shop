@@ -1,0 +1,89 @@
+{
+    "items": {
+        "aaaa": {
+            "img1": "IMG_0239.JPG",
+            "img2": "testing-height-img.jpg",
+            "itA": "imgTypeA",
+            "itB": "ihA",
+            "price": 2.99,
+            "name": "Travelling Pencil Case",
+            "itemTypes": {
+                "1o": {
+                    "value": "000",
+                    "text": "dimond patton"
+                },
+
+                "2o": {
+                    "value": "001",
+                    "text": "othor"
+                },
+
+                "3o": {
+                    "value": "002",
+                    "text": "cats"
+                },
+
+
+            },
+            "info": "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
+
+        },
+
+        "aaab": {
+            "img1": "testing-height-img.jpg",
+            "img2": null,
+            "itA": "imgTypeB",
+            "itB": "ihB",
+            "price": 2.99,
+            "name": "Cat",
+            "itemTypes": {
+                "1o": {
+                    "value": "000",
+                    "text": "dimond patton"
+                },
+
+                "2o": {
+                    "value": "001",
+                    "text": "othor"
+                }
+
+            },
+            "info": "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
+
+        },
+
+        "aaac": {
+            "img1": "IMG_0242.JPG",
+            "img2": null,
+            "itA": "imgTypeA",
+            "itB": "ihA",
+            "price": 2.99,
+            "name": "Test",
+            "itemTypes": {
+                "1o": {
+                    "value": "000",
+                    "text": "dimond patton"
+                },
+
+                "2o": {
+                    "value": "001",
+                    "text": "othor"
+                },
+
+                "3o": {
+                    "value": "002",
+                    "text": "cats"
+                },
+
+                "4o": {
+                    "value": "003",
+                    "text": "dogs"
+                },
+            },
+            "info": "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
+
+        }
+
+    }
+
+}

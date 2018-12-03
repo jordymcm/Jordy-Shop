@@ -1,5 +1,10 @@
 {
   "rules": {
+    "itemDetails": {
+      ".read": "true",
+      ".write": "true"
+    },
+    
     "orders": {
       ".read": "auth.uid === '88PXrSjQWBYzs2AU4tSsTjZTMqQ2'",
       ".write": "auth.uid === '88PXrSjQWBYzs2AU4tSsTjZTMqQ2'"

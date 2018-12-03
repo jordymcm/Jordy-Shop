@@ -33,7 +33,8 @@
     padding-top: 0.5vmin;
     font-size: 3vmin;
     height: 3.5vmin;
-    width: 15vmin;
+    width: 16vmin;
+    text-align: center;
     border-radius: 0.5vmin;
 }
 
@@ -50,7 +51,8 @@
     padding-top: 0.5vmin;
     font-size: 3vmin;
     height: 3.5vmin;
-    width: 6vmin;
+    width: 7vmin;
+    text-align: center;
     border-radius: 0.5vmin;
 }
 
@@ -88,7 +90,7 @@
 
 #cartI {
     position: absolute;
-    top: 6vmin;
+    top: 10vmin;
     left: 6vw;
 }
 
@@ -100,9 +102,19 @@
 
 /*}*/
 
-#imgHolder {
+#namePOItem {
     position: absolute;
     top: 8vmin;
+    left: 1vmin;
+    height: 4vmin;
+    /*width: 30vmin;*/
+    font-size: 4vmin;
+    color: #000000;
+}
+
+#imgHolder {
+    position: absolute;
+    top: 15vmin;
     left: 1vmin;
     height: 40vmin;
     width: 40vmin;
@@ -130,6 +142,15 @@
     font-size: 2vmin;
     color: lightgray;
     font-family: arial;
+}
+
+#orderPriceTotle {
+    position: absolute;
+    bottom: 6vmin;
+    left: 1vmin;
+    height: 3vmin;
+    font-size: 3vmin;
+    color: #000000;
 }
 
 #orderDName {
@@ -276,6 +297,15 @@
 #orderButton {
     position: absolute;
     top: 6vmin;
+    left: calc(50vw - 8vmin);
+    width: 26vmin;
+    height: 4.5vmin;
+    padding-top: 0.5vmin;
+    font-size: 4vmin;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0.5vmin;
+    background: #ff4c35;
 }
 
 #orderDeatails {
@@ -300,7 +330,7 @@
 
 #orderDeatailsIA {
     width: 60vmin;
-    height: 55vmin;
+    height: 56vmin;
     margin-top: 5vmin;
     display: flex;
     flex-direction: column;
@@ -334,12 +364,27 @@
     background: #9e9e9e;
 }
 
+#orderDeatailsIAI {
+    display: flex;
+    flex-direction: column;
+}
+
 #orderDeatailsIB {
     width: 60vmin;
     height: 60vmin;
     margin-top: 5vmin;
     display: flex;
     flex-direction: column;
+}
+
+#orderDeatailsIC {
+    width: 60vmin;
+    height: 60vmin;
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: column;
+    font-size: 3vmin;
+    color: #ffffff;
 }
 
 #orderDOrderButton {
@@ -379,6 +424,13 @@
     margin: auto;
 }
 
+#TP {
+    padding: 1vmin;
+    color: #ffffff;
+    font-size: 4vmin
+}
+
+
 #changeItemType {
     position: absolute;
     height: 3vmin;
@@ -403,9 +455,11 @@
     color: #ffffff;
 }
 
+/*FTP*/
+
 #itemInfoText {
     position: absolute;
-    top: 49vmin;
+    top: 57vmin;
     left: 1vmin;
     width: 50vmin;
     font-size: 2.5vmin;
@@ -419,7 +473,7 @@
     position: absolute;
     bottom: 1vmin;
     right: 1vmin;
-    background: red;
+    background: #ff4c35;
     width: 20vw;
     height: 3vmin;
     font-size: 3vmin;
@@ -495,6 +549,25 @@
     display: inline-block;
     height: 100%;
     width: 33.3333333%;
+}
+
+.itemPartAA {
+    margin-top: calc(100% - 30vw);
+    position: relative;
+    height: 15vw;
+    width: 30vw;
+    font-size: 7vmin;
+    color: #000000;
+    float: left;
+}
+
+.itemPartAB {
+    position: relative;
+    height: 15vw;
+    width: 30vw;
+    font-size: 5vmin;
+    color: #000000;
+    float: left;
 }
 
 .itemPartB {
@@ -586,6 +659,22 @@
 /*}*/
 
 /*TODO: fix width and height*/
+
+.noneSelecting {
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+}
+
+.II {
+    padding: 1vmin;
+    color: #ffffff;
+    font-size: 2vmin
+}
+
 
 body {
     padding: 0px;

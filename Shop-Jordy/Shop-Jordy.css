@@ -1,9 +1,23 @@
-#submitPassword {
-    height: 4vmin;
-    width: 10vmin;
-    background: red;
+/*#submitPassword {*/
+/*    height: 4vmin;*/
+/*    width: 10vmin;*/
+/*    background: red;*/
+/*}*/
+
+#text {
+    font-size: 20px;
+    font-family: arial;
+    color: #000000;
 }
 
 .hide {
     display: none;
+}
+
+th, td {
+    border: 1px solid black;
+    color: #000000;
+    font-size: 30px;
+    font-family: arial;
+    height: 40px;
 }
