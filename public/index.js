@@ -24,94 +24,96 @@ var PC = "";
 var AL = "";
 var state = "";
 var open = "N";
+var valuesOfIds = {};
+var PQ;
 
 // var itemDetails = {
-    // items: {
-    //     aaaa: {
-    //         img1: "IMG_0239.JPG",
-    //         img2: "testing-height-img.jpg",
-    //         itA: "imgTypeA",
-    //         itB: "ihA",
-    //         price: 2.99,
-    //         name: "Travelling Pencil Case",
-    //         itemTypes: {
-    //             "1o": {
-    //                 value: "000",
-    //                 text: "dimond patton"
-    //             },
+// items: {
+//     aaaa: {
+//         img1: "IMG_0239.JPG",
+//         img2: "testing-height-img.jpg",
+//         itA: "imgTypeA",
+//         itB: "ihA",
+//         price: 2.99,
+//         name: "Travelling Pencil Case",
+//         itemTypes: {
+//             "1o": {
+//                 value: "000",
+//                 text: "dimond patton"
+//             },
 
-    //             "2o": {
-    //                 value: "001",
-    //                 text: "othor"
-    //             },
+//             "2o": {
+//                 value: "001",
+//                 text: "othor"
+//             },
 
-    //             "3o": {
-    //                 value: "002",
-    //                 text: "cats"
-    //             },
+//             "3o": {
+//                 value: "002",
+//                 text: "cats"
+//             },
 
 
-    //         },
-    //         info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
+//         },
+//         info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
 
-    //     },
+//     },
 
-    //     aaab: {
-    //         img1: "testing-height-img.jpg",
-    //         img2: null,
-    //         itA: "imgTypeB",
-    //         itB: "ihB",
-    //         price: 2.99,
-    //         name: "Cat",
-    //         itemTypes: {
-    //             "1o": {
-    //                 value: "000",
-    //                 text: "dimond patton"
-    //             },
+//     aaab: {
+//         img1: "testing-height-img.jpg",
+//         img2: null,
+//         itA: "imgTypeB",
+//         itB: "ihB",
+//         price: 2.99,
+//         name: "Cat",
+//         itemTypes: {
+//             "1o": {
+//                 value: "000",
+//                 text: "dimond patton"
+//             },
 
-    //             "2o": {
-    //                 value: "001",
-    //                 text: "othor"
-    //             }
+//             "2o": {
+//                 value: "001",
+//                 text: "othor"
+//             }
 
-    //         },
-    //         info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
+//         },
+//         info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
 
-    //     },
+//     },
 
-    //     aaac: {
-    //         img1: "IMG_0242.JPG",
-    //         img2: null,
-    //         itA: "imgTypeA",
-    //         itB: "ihA",
-    //         price: 2.99,
-    //         name: "Test",
-    //         itemTypes: {
-    //             "1o": {
-    //                 value: "000",
-    //                 text: "dimond patton"
-    //             },
+//     aaac: {
+//         img1: "IMG_0242.JPG",
+//         img2: null,
+//         itA: "imgTypeA",
+//         itB: "ihA",
+//         price: 2.99,
+//         name: "Test",
+//         itemTypes: {
+//             "1o": {
+//                 value: "000",
+//                 text: "dimond patton"
+//             },
 
-    //             "2o": {
-    //                 value: "001",
-    //                 text: "othor"
-    //             },
+//             "2o": {
+//                 value: "001",
+//                 text: "othor"
+//             },
 
-    //             "3o": {
-    //                 value: "002",
-    //                 text: "cats"
-    //             },
+//             "3o": {
+//                 value: "002",
+//                 text: "cats"
+//             },
 
-    //             "4o": {
-    //                 value: "003",
-    //                 text: "dogs"
-    //             },
-    //         },
-    //         info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
+//             "4o": {
+//                 value: "003",
+//                 text: "dogs"
+//             },
+//         },
+//         info: "This pencil case is suitable for travelling, it is 17.5cm X 7cm, fits 12 pencils and is handmade and closes with velcro making it more compact."
 
-    //     }
+//     }
 
-    // }
+// }
 // }
 
 var itemOrder = {
@@ -136,7 +138,13 @@ function SID(data) {
     FW()
 }
 
+
+// window.onload =  function() {
+//     document.getElementById("stopAll").classList.remove("hide");
+// }
+
 function FW() {
+    document.getElementById("stopAll").classList.add("hide");
 
     // window.onload = function() {
 
@@ -157,7 +165,7 @@ function FW() {
         ec = document.createElement("div");
         ec.classList.add("itemPartAB", "defont");
         ea.appendChild(ec);
-        ec.innerHTML = "$" + itemDetails.items[itemOrder["i" + iNumber]].price;
+        ec.innerHTML = "$" + itemDetails.items[itemOrder["i" + iNumber]].price.toFixed(2);
         e.appendChild(ea);
 
         ea = document.createElement("div");
@@ -241,7 +249,7 @@ function openOrderMenu(event) {
     open = "Y";
     itemId = event.srcElement.dataset.openitem;
     console.log(itemId);
-    document.getElementById("namePOItem").innerHTML = itemDetails.items[itemId].name + "&nbsp &nbsp &nbsp &nbsp $" + itemDetails.items[itemId].price;
+    document.getElementById("namePOItem").innerHTML = itemDetails.items[itemId].name + "&nbsp &nbsp &nbsp &nbsp $" + itemDetails.items[itemId].price.toFixed(2);
     document.getElementById("orderQwantity").value = "";
     document.getElementById("changeItemType").value = "1o";
     document.getElementById("imgHolder").removeChild(document.getElementById("imgHolder").firstChild);
@@ -573,14 +581,71 @@ function writeInvoice() {
         eb.appendChild(e);
     }
 
-    var ea = document.createElement("span");
-    ea.innerHTML = "Totle: $" + TP.toFixed(2);
+    var ed;
+
+    ed = document.createElement("span");
+
+    valuesOfIds = {};
+
+    itemsInCart.forEach(function(key, i) {
+        addToValuesOfIds(itemsInCart[i]);
+    });
+
+
+    PQ = 0;
+    Object.keys(valuesOfIds).forEach(function(key, i) {
+        calculateItemPostage(key, i);
+    });
+
+
+    console.log(valuesOfIds);
+    ed.innerHTML = "Postage: $" + PQ.toFixed(2);
+    ed.setAttribute("id", "PP");
+    ed.classList.add("defont");
+
+    ea = document.createElement("span");
+    ea.innerHTML = "Totle: $" + ((parseInt(TP.toFixed(2)) + parseInt(PQ.toFixed(2))).toFixed(2));
     ea.setAttribute("id", "TP");
     ea.classList.add("defont");
 
-    document.getElementById("orderDeatailsIA").appendChild(ea);
-    document.getElementById("orderDeatailsIA").appendChild(eb);
 
+
+    document.getElementById("orderDeatailsIA").appendChild(ea);
+
+    document.getElementById("orderDeatailsIA").appendChild(ed);
+
+
+
+    document.getElementById("orderDeatailsIA").appendChild(eb);
+}
+
+function calculateItemPostage(key, i) {
+
+    console.log("|||||")
+    // console.log(valuesOfIds[key])
+    // console.log(itemDetails.items[key].postQuantity)
+    console.log(valuesOfIds[key])
+    if (itemDetails.items[key].postQuantity === 1) {
+        PQ = PQ + valuesOfIds[key] * 2;
+    }
+    else {
+        if (valuesOfIds[key] === 1 && itemDetails.items[key].postQuantity !== 1) {
+            PQ = PQ + 1;
+        }
+        else {
+            PQ = PQ + Math.ceil(valuesOfIds[key] / itemDetails.items[key].postQuantity) * 2;
+        }
+    }
+}
+
+
+function addToValuesOfIds(data) {
+    if (valuesOfIds[data.substring(0, 4)] === undefined) {
+        valuesOfIds[data.substring(0, 4)] = parseFloat(data.substring(4, 5));
+    }
+    else {
+        valuesOfIds[data.substring(0, 4)] = parseFloat(valuesOfIds[data.substring(0, 4)]) + parseFloat(data.substring(4, 5));
+    }
 }
 
 
